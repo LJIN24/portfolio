@@ -90,8 +90,43 @@ button:focus {
 .header_menu_item.active {
   border: solid var(--color-accent);
 }
-.mainpic {
-  width: 150px;
-  height: 150px;
+/* Home */
+#home {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 5rem 1rem;
+  text-align: center;
+}
+.home_avatar {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
   border-radius: 100%;
+  border: solid 3px var(--color-accent);
+}
+
+.home_title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.home_title-strong {
+  color: var(--color-accent);
+}
+.home_desscription {
+  font-size: 1.3rem;
+}
+.home_contact {
+  display: inline-block;
+  background-color: var(--color-accent);
+  border-radius: 0.2rem;
+  color: var(--color-black);
+  margin: 1.6rem;
+  padding: 0.5rem 1rem;
+  font-weight: bolder;
+}
+
+.home_contact:hover {
+  background-color: transparent;
+  outline: solid var(--color-accent);
+  color: var(--color-text);
 }
