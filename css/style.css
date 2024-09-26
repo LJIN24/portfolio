@@ -338,3 +338,44 @@ button:focus {
   transform: translateX(-50%);
   margin: 0.5rem;
 }
+/* testimonials */
+.testimonial:nth-child(even) .testimonial__img {
+  order: 1;
+}
+.testimonial {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+.testimonial__img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.testimonials__bubble {
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 1.5rem;
+}
+.testimonials__name {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: var(--color-accent);
+  filter: brightness(70%);
+}
+footer {
+  background-color: var(--color-black);
+  color: var(--color-text);
+}
+.footer__icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+.arrow {
+  color: var(--color-text);
+}
