@@ -365,6 +365,7 @@ button:focus {
   color: var(--color-accent);
   filter: brightness(70%);
 }
+/* footer */
 footer {
   background-color: var(--color-black);
   color: var(--color-text);
@@ -377,5 +378,15 @@ footer {
   margin: 1rem 0;
 }
 .arrow {
+  background-color: var(--color-primary);
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  font-size: 3rem;
+  width: 4.5rem;
+  height: 4.5rem;
   color: var(--color-text);
+  text-align: center;
+  border-radius: 100%;
+  box-shadow: 4px 8px 8px var(--color-accent);
 }
