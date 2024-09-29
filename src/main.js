@@ -30,12 +30,14 @@ document.addEventListener('scroll', () => {
         arrow.style.opacity = 1
     }
 });
-const nav = document.querySelector('.header__nav')
 const hamberger = document.querySelector('.hamberger')
 const menu = document.querySelector('.header_menu')
 hamberger.addEventListener('click', () => {
     menu.classList.toggle('active')
-    nav.classList.toggle('active')
+})
+const menuItem = document.querySelector('.header_menu')
+menuItem.addEventListener('click', () => {
+    menu.classList.remove('active')
 })
 
 

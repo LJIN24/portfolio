@@ -53,7 +53,7 @@ button {
   outline: 0;
 }
 button:focus {
-  outline: 1px solid var(--color-accent);
+  outline: 1px solid transparent;
 }
 /* Common */
 .section {
@@ -107,10 +107,13 @@ button:focus {
   font-size: 1.8rem;
 }
 .header_menu {
+  width: 100%;
   display: flex;
   gap: 4px;
 }
 .header_menu_item {
+  border-bottom: solid 1px transparent;
+  display: block;
   padding: 8px 16px;
 }
 .header_menu_item:hover {
@@ -402,14 +405,14 @@ footer {
 
 @media screen and (max-width: 768px) {
   .section {
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
   }
   .title {
     font-size: 2rem;
   }
   .description {
     font-size: 1rem;
-    text-align: justify;
+    text-align: center;
   }
   #home {
     padding-bottom: 3rem;
@@ -457,18 +460,16 @@ footer {
   }
   .header {
     flex-direction: column;
-    color: var(--color-text);
+    align-items: start;
+    background-color: var(--color-primary);
   }
   .header_menu {
-    opacity: 0;
+    display: none;
     flex-direction: column;
-    padding: 1rem 4rem;
+    margin: 1rem 4rem;
     gap: 1rem;
-    transition: opacity 300ms ease-in;
   }
   .header__nav {
-    opacity: 0;
-
     width: 100%;
     display: flex;
     justify-content: center;
@@ -476,10 +477,13 @@ footer {
     text-align: center;
   }
   .header_menu.active {
-    opacity: 1;
+    display: flex;
   }
-  .header__nav.active {
-    background-color: var(--color-black);
-    opacity: 1;
+  .hamberger {
+    color: var(--color-text);
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1.3rem;
+    right: 1rem;
   }
 }
