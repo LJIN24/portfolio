@@ -300,9 +300,6 @@ button:focus {
 .category--selected .category__count {
   opacity: 1;
 }
-.category:hover .category__count {
-  opacity: 1;
-}
 
 .projects {
   display: grid;
