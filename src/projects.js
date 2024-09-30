@@ -1,64 +1,45 @@
 'use strict'
 
-const allBtn = document.querySelector('.all')
-const frontBtn = document.querySelector('.front-end')
-const backBtn = document.querySelector('.back-end')
-const mobileBtn = document.querySelector('.mobile-btn')
+const categories = document.querySelector('.categories')
+const projectsData = document.querySelectorAll('.project')
+const projects = document.querySelector('.projects')
 
-const frontEnd = document.querySelectorAll('.front')
-const backEnd = document.querySelectorAll('.back')
-const mobile = document.querySelectorAll('.mobile')
+categories.addEventListener('click', (event) => {
+    const filter = event.target.dataset.category
+    if (filter === undefined) {
+        return;
+    }
 
-const frontEndArr = [...frontEnd]
-const backEndArr = [...backEnd]
-const mobileArr = [...mobile]
+    activeNumber(event)
+    projectFilter(filter);
 
-allBtn.addEventListener('click', () => {
-    frontEndArr.forEach(type => type.style.display = 'flex'
-    );
-    backEndArr.forEach(type => type.style.display = 'flex'
-    );
-    mobileArr.forEach(type => type.style.display = 'flex'
-    );
-    allBtn.classList.add('category--selected')
-    frontBtn.classList.remove('category--selected')
-    backBtn.classList.remove('category--selected')
-    mobileBtn.classList.remove('category--selected')
-});
-frontBtn.addEventListener('click', () => {
-    frontEndArr.forEach(type => type.style.display = 'flex'
-    );
-    backEndArr.forEach(type => type.style.display = 'none'
-    );
-    mobileArr.forEach(type => type.style.display = 'none'
-    );
-    allBtn.classList.remove('category--selected')
-    frontBtn.classList.add('category--selected')
-    backBtn.classList.remove('category--selected')
-    mobileBtn.classList.remove('category--selected')
-});
-backBtn.addEventListener('click', () => {
-    frontEndArr.forEach(type => type.style.display = 'none'
-    );
-    backEndArr.forEach(type => type.style.display = 'flex'
-    );
-    mobileArr.forEach(type => type.style.display = 'none'
-    );
-    allBtn.classList.remove('category--selected')
-    frontBtn.classList.remove('category--selected')
-    backBtn.classList.add('category--selected')
-    mobileBtn.classList.remove('category--selected')
-});
-mobileBtn.addEventListener('click', () => {
-    frontEndArr.forEach(type => type.style.display = 'none'
-    );
-    backEndArr.forEach(type => type.style.display = 'none'
-    );
-    mobileArr.forEach(type => type.style.display = 'flex'
-    );
-    allBtn.classList.remove('category--selected')
-    frontBtn.classList.remove('category--selected')
-    backBtn.classList.remove('category--selected')
-    mobileBtn.classList.add('category--selected')
-});
+
+
+})
+
+const activeNumber = (event) => {
+    const current = document.querySelector('.category--selected')
+    current.classList.remove('category--selected')
+    event.target.classList.add('category--selected')
+}
+
+const projectFilter = (filter) => {
+    projectsData.forEach((project) => {
+
+        if (filter === 'all' || filter === project.dataset.type) {
+            project.style.display = 'block'
+        } else {
+            project.style.display = 'none'
+        }
+    })
+    projects.classList.add('animation-out')
+    setTimeout(() => {
+        projects.classList.remove('animation-out')
+    }, 250)
+
+}
+
+
+
+
 
