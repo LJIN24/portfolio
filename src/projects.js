@@ -1,8 +1,5 @@
 'use strict';
 
-//스크롤이 각 섹션에 진입할때 item_active클래스를 새롭게 추가하고 원래 섹션에서 제거한다.
-//각 섹션을 클릭하면 해당 위치로 스크롤 한다. 이벤트가 발생할 때 
-
 const observer0 = new IntersectionObserver((entries, observer) => {
     const home = document.querySelector('.home')
     entries.forEach(entry => {
@@ -11,16 +8,12 @@ const observer0 = new IntersectionObserver((entries, observer) => {
         } else {
             home.classList.remove('active');
 
-        }
-    })
+        };
+    });
 }, { threshold: 0.8 });
-const homeSection = document.querySelector('#home')
-const homeHeader = document.querySelector('.home')
-observer0.observe(homeSection)
 
-homeHeader.addEventListener('click', () => {
-    homeSection.scrollIntoView({ behavior: "smooth" });
-})
+const homeSection = document.querySelector('#home');
+observer0.observe(homeSection);
 
 
 const observer = new IntersectionObserver((entries, observer) => {
@@ -95,40 +88,7 @@ const observer4 = new IntersectionObserver((entries, observer) => {
 const contact = document.querySelector('#contact')
 observer4.observe(contact)
 
-const projectCategories = document.querySelector('.categories')
-const project = document.querySelectorAll('.project')
-const projectsContainer = document.querySelector('.projects')
 
-
-
-projectCategories.addEventListener('click', (event) => {
-    const filter = event.target.dataset.category
-    if (filter === undefined) {
-        return;
-    };
-
-    currentActive(event)
-    filterProject(filter)
-});
-
-const currentActive = (event) => {
-    const currentActive = document.querySelector('.category--selected')
-    currentActive.classList.remove('category--selected')
-    event.target.classList.add('category--selected')
-}
-const filterProject = (filter) => {
-    project.forEach((project) => {
-        if (filter === 'all' || filter === project.dataset.type) {
-            project.style.display = 'block'
-        } else {
-            project.style.display = 'none'
-        }
-    });
-    projectsContainer.classList.add('animation-out')
-    setTimeout(() => {
-        projectsContainer.classList.remove('animation-out')
-    }, 250)
-};
 
 
 
